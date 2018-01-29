@@ -67,7 +67,7 @@ switch (mode) {
       throw '0OrnegativeMPGError';
     }
     var cost = (calc[0]/calc[1])*calc[2];
-    alert('Your journey will take ' + time + 'hrs, and cost £' + cost);
+    alert('Your journey will take ' + time.toFixed(2) + 'hrs, and cost £' + cost.toFixed(2));
     break;
 
   default:
