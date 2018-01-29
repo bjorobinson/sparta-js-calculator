@@ -57,7 +57,15 @@ switch (mode) {
   case 't':
     var action = prompt("Enter distance (miles), mpg, cost per gallon(in pounds, but don't include symbol) and speed (mph) all seperated by a space and recieve an evaluated time and cost")
     var calc = action.split(" ");
+    var mpg_reduction = 0;
+    if (calc[3] > 60){
+      mpg_reduction = 2 * (calc[3]-60)
+    }
     var time = calc[0]/calc[3];
+    calc[1] = calc[1] - mpg_reduction;
+    if (calc[1] <= 0){
+      throw '0OrnegativeMPGError';
+    }
     var cost = (calc[0]/calc[1])*calc[2];
     alert('Your journey will take ' + time + 'hrs, and cost £' + cost);
     break;
