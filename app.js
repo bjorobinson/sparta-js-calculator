@@ -1,4 +1,4 @@
-var mode = prompt("Input mode: (b)asic, (a)dvanced, (bmi) calculator");
+var mode = prompt("Input mode: (b)asic, (a)dvanced, (bmi) calculator, (t)rip planner");
 switch (mode) {
   case 'b':
     console.log("Basic");
@@ -52,6 +52,15 @@ switch (mode) {
     } else {
       throw 'InvalidInputError'
     }
+    break;
+
+  case 't':
+    var action = prompt("Enter distance (miles), mpg, cost per gallon(in pounds, but don't include symbol) and speed (mph) all seperated by a space and recieve an evaluated time and cost")
+    var calc = action.split(" ");
+    var time = calc[0]/calc[3];
+    var cost = (calc[0]/calc[1])*calc[2];
+    alert('Your journey will take ' + time + 'hrs, and cost £' + cost);
+    break;
 
   default:
     console.log("Quitting");
