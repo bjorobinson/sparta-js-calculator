@@ -5,18 +5,20 @@ switch (mode) {
     var action = prompt("Input a basic sum with two integers, seperated by space, and using +, -, *, or /");
     var calc = action.split(" ");
     var operator = calc[1];
+    calc[0] = parseInt(calc[0]);
+    calc[2] = parseInt(calc[2]);
     switch (operator) {
       case '+':
-        console.log('+');
+        alert(calc[0]+calc[2]);
         break;
       case '-':
-        console.log('-');
+        alert(calc[0]-calc[2]);
         break;
       case '*':
-        console.log('*');
+        alert(calc[0]*calc[2]);
         break;
       case '/':
-        console.log('/');
+        alert(calc[0]/calc[2]);
         break;
       default:
         console.log("invalid sum");
