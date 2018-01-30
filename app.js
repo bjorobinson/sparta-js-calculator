@@ -3,13 +3,14 @@ switch (mode) {
   case 'b':
     console.log("Basic");
     var action = prompt("Input a basic sum with two integers, seperated by space, and using +, -, *, or /");
-    var calc = action.split(" ");
+    var calc = action.split(" "); //Take the single string input, and break it into an array seperated by a space.
     if (calc.length !=3){
-      throw 'InvalidInputError';
+      throw 'InvalidInputError';//This means the action input was not a simple x + y, but could be a x + - y etc.
     }
-    var operator = calc[1];
-    calc[0] = parseInt(calc[0]);
-    calc[2] = parseInt(calc[2]);
+    //We know the input is now in an array of length 3.
+    var operator = calc[1]; //this is the operator
+    calc[0] = parseInt(calc[0]); //We know this is a number, but it is still a string, so we change.
+    calc[2] = parseInt(calc[2]); //Same thing here.
     switch (operator) {
       case '+':
         alert(calc[0]+calc[2]);
@@ -29,9 +30,9 @@ switch (mode) {
     console.log(calc);
     break;
   case 'a':
-    var action = prompt("Input square or square root function in the for: 2^3 or | 8");
+    var action = prompt("Input square or square root function in the for: 2 ^ 3 or | 8");
     var calc = action.split(" ");
-    if (calc.length !=3 || calc.length != 2){
+    if (calc.length !=3 && calc.length != 2){ //This has the extra check of length being equal to 2, as sqrt would only be length 2.
       throw 'InvalidInputError';
     }
     if (calc[1]==='^'){
